@@ -1,0 +1,35 @@
+include includes/mixins.pug
+
+doctype html
+html
+  head
+    meta(name="description", content="Graduate Bird Flyer program is available to you and your free-flight clubs")
+    +head('Graduate Bird Flyer Program')
+
+  body
+    header
+      button.js-menu.menu(type = "button")
+        span.bar
+      nav
+        ul
+          li Link
+          li Link
+          li Link
+          li Link
+
+      video(poster="/images/chans-angles-cover.jpg", id="bgvid", playsinline, autoplay, muted, loop)
+        -//source(src="http://thenewcode.com/assets/videos/polina.mp4", type="video/mp4")
+        source(src="/images/vids/chans-angles-720p.m4v", type="video/mp4")
+
+
+      #message
+        h1 Chan the Bird Man’s Graduate Bird Flyer Program
+        // p filmed by Kai Bansner
+        p Dear Friends,
+        p Thank you for your support of my pet birds and their development as strong free-flyers. I strive to improve their lives through exercise and proper nutrition, and am so proud of showcasing their abilities. 
+        p I’d like to support the lives of your birds by providing education services that will help you to nurture your flock. Most importantly, my goal is to educate the members of your community about birds so we can co-exist peacefully and have them accompany you in your lifestyle and not be caged birds. Chan Quach Graduate Bird Flyer program is available to you and your free-flight clubs. Other services include veterinarian visits, lifestyle flying adjustments (country, suburb, busy downtown living and flying). Being physical active with your bird(s) like jogging or bicycling and flying in unison etc. By graduating the Graduate Bird and Flyer program, a few of your challenges in aggression, screaming, harness, and seasonal hormones will be dealt with . Preference in effective home visits. I do travel. Skype and FaceTime are offered and necessary. Email me for additional support. 
+        button Pause
+
+  +main-js
+  
+  
