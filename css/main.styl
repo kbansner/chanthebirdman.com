@@ -1,4 +1,7 @@
 @import 'jeet'
+$breakpoint-page = 1024px
+$breakpoint-tablet = 768px
+$breakpoint-phone = 640px
 
 html {
   font-size: 16px;
@@ -10,12 +13,12 @@ body {
   background: #000;
 }
 header
-  positon: relative
+  position: relative
   height: 100vh
   width: 100vw
 
 video {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   min-width: 100%;
@@ -35,15 +38,21 @@ video {
 
 #message {
   // font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
-  font-weight:100;
+  font-weight: 100;
   background: rgba(0,0,0,0.3);
   color: white;
   padding: 2rem;
   width: 33%;
-  margin:2rem;
+  margin: 2rem;
   float: right;
   font-size: 1.2rem;
+  @media(max-width: $breakpoint-phone) {
+    margin: 7rem 2rem 2rem
+    width: auto;
+    font-size: 1rem;
+  }
 }
+
 h1 {
   font-size: 2.5rem;
   // text-transform: uppercase;
@@ -80,7 +89,7 @@ a:hover{
   background:rgba(0,0,0,0.9);
 }
 @media screen and (max-width: 500px) {
-  div{width:70%;}
+  div{ width:70%; }
 }
 @media screen and (max-device-width: 800px) {
   // html { background: url(https://thenewcode.com/assets/images/polina.jpg) #000 no-repeat center center fixed; }
@@ -91,16 +100,24 @@ a:hover{
 // Hamburger
 .menu {
   transition: 0.1s transform linear;
-  position: relative;
+  position: fixed;
   background: 0;
   float: left;
   margin: 2rem 1.5rem;
-  height: 2rem;
-  width: 3rem;
+  height: 1.5rem;
+  width: 2.6rem;
   z-index: 1;
   outline: 0;
   padding: 0;
   border: 0;
+  opacity: 0.5;
+  transition: 0.1s opacity linear
+  &:hover {
+    opacity: 1;
+  }
+  &.active {
+    opacity: 1;
+  }
 }
 
 .bar {
@@ -121,11 +138,11 @@ a:hover{
   }
 
   &::before {
-    top: -1.2rem;
+    top: -1rem;
   }
 
   &::after {
-    top: 1.2rem;
+    top: 1rem;
   }
 
   &::before,
@@ -158,9 +175,9 @@ a:hover{
 }
 
 nav {
-  width: 250px;
+  width: 11rem;
   height: 100%;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.85);
   position: fixed;
   transform: translateX(-250px);
   transition: transform 0.6s cubic-bezier(.56,.1,.34,.91);
