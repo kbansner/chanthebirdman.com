@@ -1,14 +1,9 @@
 var vid = document.getElementById("bgvid");
+var message = document.getElementById("message");
 var pauseButton = document.querySelector("#message button");
 
-if (window.matchMedia('(prefers-reduced-motion)').matches) {
-    vid.removeAttribute("autoplay");
-    vid.pause();
-    pauseButton.innerHTML = "Paused";
-}
-
 function vidFade() {
-  vid.classList.add("stopfade");
+  vid.classList.add("stop");
 }
 
 vid.addEventListener('ended', function() {
@@ -20,16 +15,20 @@ vidFade();
 
 
 pauseButton.addEventListener("click", function() {
-  vid.classList.toggle("stopfade");
+  vid.classList.toggle("stop");
   if (vid.paused) {
     vid.play();
+    window.scrollTo(0,0);
     pauseButton.innerHTML = "Pause";
   } else {
     vid.pause();
-    pauseButton.innerHTML = "Paused";
+    pauseButton.innerHTML = "Play Video";
   }
 })
-
+$(document).ready(function(){
+  vid.pause();
+  message.classList.add('show');
+});
 
 /* A simple and scalable hamburger menu using css transitions. */
 var isActive = false;
