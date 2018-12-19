@@ -1,6 +1,6 @@
 var vid = document.getElementById("bgvid");
 var message = document.getElementById("message");
-var pauseButton = document.querySelector("#message button");
+var pauseButton = document.querySelector("#videoButton");
 
 function vidFade() {
   vid.classList.add("stop");
@@ -43,4 +43,8 @@ $('.js-menu').on('click', function() {
 	}
 
 	isActive = !isActive;
+});
+
+$('.draw-opener').on('click', function(){
+  $('.draw').toggleClass('open');
 });
