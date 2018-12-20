@@ -9,68 +9,17 @@ html
 
   body
     section.card
+      button.video Play 
+      div.screen
       div.info
           ul.info-list
-              li.current
-                  img(src="https://cdn.arnellebalane.com/images/codepen-day85/artwork-1.jpg", alt="The Marcian") 
-                  h1 The Martian
-                  p During a manned mission to Mars, Astronaut Mark Watney
-                    | (Matt Damon) is presumed dead after a fierce storm and left
-                    | behind by his crew.
-                  span.rating 9.1
-              li
-                  img(src="https://cdn.arnellebalane.com/images/codepen-day85/artwork-2.jpg", alt="Interstellar")
-                  h1 Interstellar
-                  p A team of explorers travel through a wormhole in space in an 
-                    | attempt to ensure humanity's survival.
-                  span.rating 8.3
-              li
-                  img(src="https://cdn.arnellebalane.com/images/codepen-day85/artwork-3.jpg", alt="Gravity")
-                  h1 Gravity
-                  p An astronaut out of three is taken into a series of debris and 
-                    | starts orbiting around the Earth. She will have to stay extremely 
-                    | strong in order to keep her sanity.
-                  span.rating 7.9
-      footer.actions
-          span.rating-container
-          button.cart Book Movie
-          ul.navigation
-              li.current
-              li
-              li
 
-      form.booking-form
-          button.cancel Cancel
-          p.input IMAX 3D
-          p.input Monday, 21
-              sup st 
-              | September - 18:00
-          p.input 6 Adults
-          div.seats
-              header
-                  label.legend
-                      span.seat
-                      span.legend-label Available
-                  label.legend
-                      span.seat.taken
-                      span.legend-label Taken    
-              ul.seats-container
-                  li.seats-row
-                      - var i = 0
-                      while i++ < 3
-                          button.seat(type="button")
-                  - var i = 0
-                  while i++ < 6
-                      li.seats-row
-                          - var j = 0
-                          while j++ < 7
-                              button.seat(type="button")
-          footer
-              label.total-label Total
-              p.total-price $56.90
-              button.submit-button Checkout
-            
-          
+              li.current
+                  -//img(src="https://cdn.arnellebalane.com/images/codepen-day85/artwork-1.jpg", alt="The Marcian") 
+                  h1 Chan the Bird Man’s Graduate Bird Flyer Program
+                  p Dear Friends,
+                  p Thank you for your support of my pet birds and their development as strong free-flyers. I strive to improve their lives through exercise and proper nutrition, and am so proud of showcasing their abilities. 
+
   script(src="http://code.jquery.com/jquery-2.2.4.min.js", integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=", crossorigin="anonymous")
   script(src='js/example.js')
   
