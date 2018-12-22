@@ -1,4 +1,5 @@
 /** Base Styles **/
+$skyblue = #629eda
 *
 *::before
 *::after
@@ -117,7 +118,7 @@ video
     opacity 0
 
 .screen
-  background-color #629eda
+  background-color $skyblue
   background-position center
   background-size cover
   background-repeat no-repeat
@@ -126,19 +127,17 @@ video
 
 // Desktop Layout
 @media(min-width: 600px)
-  #viewport, .screen
+  .screen
     position fixed
     width 100%
     height 100%
-
-  .screen
     background-image url(../images/chans-angles-cover-desktop.jpg)
 
   .drawer
     position absolute
     top 0
-    right 4%
-    margin-top 4%
+    right 3%
+    margin-top 3%
     background rgba(0,0,0,0.3)
     color white
     padding 1%
@@ -180,6 +179,7 @@ video
     position fixed
     height 100vh
     width 100vw
+    background-color lighten($skyblue, 35%)
     overflow hidden
 
     &::before
@@ -193,7 +193,7 @@ video
         border-radius 0.5rem
 
     &::before
-        background-color darken(#629eda, 30%)
+        background-color darken($skyblue, 30%)
         clip-path polygon(0 57%, 100% 67%, 100% 100%, 0% 100%)
         mix-blend-mode overlay
         opacity 0.4

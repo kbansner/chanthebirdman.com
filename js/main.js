@@ -17,7 +17,7 @@ playButton.addEventListener('click', function() {
 
 var width = $(document).width();
 if (width < 600)
-  $(video).append('<source src="./videos/phone-angles-music.mp4" type="video/mp4">');
+  $(video).append('<source src="./videos/phone-angles-music.m4v" type="video/mp4">');
 else
   $(video).append('<source src="./videos/desktop-angles-music.mp4" type="video/mp4">');
 
