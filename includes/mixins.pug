@@ -1,6 +1,12 @@
 mixin head(pageTitle)
   meta(charset='utf-8')
   meta(name='viewport', content='width=device-width, initial-scale=1')
+  script(async, src="https://www.googletagmanager.com/gtag/js?id=UA-131278402-1")
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-131278402-1');
 
   link(href='css/main.css', rel='stylesheet', type='text/css')
 
