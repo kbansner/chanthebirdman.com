@@ -7,12 +7,9 @@ html
     +head('Graduate Bird Flyer Program')
 
   body
-    div#viewport
+    div.viewport
       div.screen
-        video.stop(id="bgvid", playsinline)
-          -//source(src="images/vids/phone-angles.mp4", type="video/mp4")
-          source(src="images/vids/phone-angles-music-comp.mp4", type="video/mp4" media="all and (max-width: 800px)")
-          source(src="images/vids/chans-angles-720p.m4v", type="video/mp4")
+        video.stop(playsinline)
 
     div.drawer
       div#play
@@ -29,7 +26,7 @@ html
 
       footer
         a.button(href="mailto:chanthebirdmansf@gmail.com") Email 
-        a.button.right(href="https://www.facebook.com/birdbehavior/") FaceBook
+        a.button(href="https://www.facebook.com/birdbehavior/") FaceBook
 
   +main-js
   

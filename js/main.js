@@ -1,38 +1,43 @@
-var vid = document.getElementById("bgvid");
-var pauseButton = document.querySelector("#play");
+var video = document.querySelector("video");
+var playButton = document.querySelector("#play");
 
-vid.addEventListener('ended', function() {
+video.addEventListener('ended', function() {
   // only functional if "loop" is removed
-  vid.pause();
-  vid.classList.add("stop");
+  video.pause();
+  video.classList.add("stop");
 });
 
-pauseButton.addEventListener("click", function() {
-  if (vid.paused) {
-    vid.play();
+playButton.addEventListener("click", function() {
+  if (video.paused) {
+    video.play();
     window.scrollTo(0,0);
-    vid.classList.remove("stop");
+    video.classList.remove("stop");
   } else {
-    vid.pause();
+    video.pause();
   }
-})
+});
 
+$(document).ready(function(){
+  var width = $(document).width();
+  if (width < 600)
+    $(video).append('<source src="./videos/phone-angles-music.mp4" type="video/mp4">');
+  else
+    $(video).append('<source src="./videos/desktop-angles-music.mp4" type="video/mp4">');
+});
 
 $(document).ready(function(){
   $(window).scroll(function(){
     var s = $(this).scrollTop()
-    //console.log('s', s);
     if (s > 100) {
-      pauseButton.classList.add('hide');
-      vid.pause();
+      playButton.classList.add('hide');
+      video.pause();
     }
     else {
-      pauseButton.classList.remove('hide');
+      playButton.classList.remove('hide');
     }
   })
 });
 
-var playButton = document.getElementById('play');
 playButton.addEventListener('click', function(){
-  playButton.classList.toggle('toggle');
+  playButton.classList.toggle('paused');
 });
