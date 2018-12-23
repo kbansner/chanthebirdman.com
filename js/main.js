@@ -15,11 +15,19 @@ playButton.addEventListener('click', function() {
   }
 });
 
-var width = $(document).width();
-if (width < 600)
-  $(video).append('<source src="./videos/phone-angles-music.m4v" type="video/mp4">');
-else
-  $(video).append('<source src="./videos/desktop-angles-music.mp4" type="video/mp4">');
+function doOnOrientationChange() {
+  pauseVideo();
+  if (window.orientation === 0) {
+    $(video).replaceWith('<video playsinline><source src="./videos/phone-angles-music.m4v" type="video/mp4"></video>');
+  }
+  else {
+    $(video).replaceWith('<video><source src="./videos/desktop-angles-music.mp4" type="video/mp4"></video>');
+  }
+  video = document.querySelector('video');
+}
+window.addEventListener('orientationchange', doOnOrientationChange);
+// Initial execution
+if ("onorientationchange" in window) doOnOrientationChange();
 
 function playVideo(){
   window.scrollTo(0,0);
