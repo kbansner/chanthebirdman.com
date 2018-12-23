@@ -15,19 +15,21 @@ playButton.addEventListener('click', function() {
   }
 });
 
-function doOnOrientationChange() {
+function orientationChangeAction() {
   pauseVideo();
   if (window.orientation === 0) {
-    $(video).replaceWith('<video playsinline><source src="./videos/phone-angles-music.m4v" type="video/mp4"></video>');
+    video.setAttribute('playsinline', 'true');
+    video.innerHTML = '<video playsinline><source src="./videos/phone-angles-music.m4v" type="video/mp4"></video>';
   }
   else {
-    $(video).replaceWith('<video><source src="./videos/desktop-angles-music.mp4" type="video/mp4"></video>');
+    video.removeAttribute('playsinline');
+    video.innerHTML = '<source src="./videos/desktop-angles-music.mp4" type="video/mp4">';
   }
   video = document.querySelector('video');
 }
-window.addEventListener('orientationchange', doOnOrientationChange);
+window.addEventListener('orientationchange', orientationChangeAction);
 // Initial execution
-if ("onorientationchange" in window) doOnOrientationChange();
+if ("onorientationchange" in window) orientationChangeAction();
 
 function playVideo(){
   window.scrollTo(0,0);
@@ -41,15 +43,12 @@ function pauseVideo(){
   playButton.classList.remove('playing');
 }
 
-$(document).ready(function(){
-  $(window).scroll(function(){
-    var scrollTop = $(this).scrollTop()
-    if (scrollTop > 100) {
-      playButton.classList.add('hide');
-      pauseVideo();
-    }
-    else {
-      playButton.classList.remove('hide');
-    }
-  })
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 100) {
+    playButton.classList.add('hide');
+    pauseVideo();
+  }
+  else {
+    playButton.classList.remove('hide');
+  }
 });
