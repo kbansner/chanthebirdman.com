@@ -102,14 +102,9 @@ footer
 	clip-path polygon(21% 0, 73% 0, 73% 100%, 21% 100%, 21% 100%)
 
 video
-  position: absolute
-  top 50%
-  left 50%
-  min-width 100%
-  min-height 100%
-  width auto
-  height auto
-  transform translateX(-50%) translateY(-50%)
+  position: relative
+  width 100%
+  height 100%
   transition 1s opacity
   opacity 1
   z-index -1
@@ -205,16 +200,10 @@ video
         opacity 0.4
 
   .screen
-    position absolute
+    position relative
     width 100%
     height 80%
     background-image url(../images/chans-angles-cover-mobile.jpg)
-
-  video
-    min-width 0
-    min-height 0
-    width auto
-    height 100%
 
   .drawer
     position absolute
