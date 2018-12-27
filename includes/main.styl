@@ -1,4 +1,3 @@
-/** Base Styles **/
 $skyblue = #629eda
 *
 *::before
@@ -29,12 +28,16 @@ p
   font-size 3.8vmin
   color #666
 
+a
+a:visited
+  color white
+
 a.button
   display inline-block
   padding 0 2rem
   min-width 25vmin
-  color white
   line-height 7.6vmin
+  color white !important
   text-align center
   font-size 3.4vmin
   font-weight 600
@@ -73,8 +76,6 @@ footer
   will-change opacity, transform
   background-color black
   color white
-  // font-size 3.5vmin
-  // font-weight bold
   text-indent -300px
   &:hover
   &:focus
@@ -145,7 +146,7 @@ video
     width 35%
 
     h1
-      margin 1vw 0 6vw
+      margin 1vw 0 6.8vw
       font-size 2.1vw
       color white
       line-height 1.3
@@ -227,6 +228,10 @@ video
       top -7.9%
       background-color #fff
       clip-path polygon(0 100%, 100% 0, 100% 100%)
+
+  a
+  a:visited
+    color #444
 
   // Small Phone Horizontal Layout
   @media(orientation:landscape)
