@@ -8,9 +8,8 @@ mixin head(pageTitle)
     gtag('js', new Date());
     gtag('config', 'UA-131278402-1');
 
-  link(href='css/main.css', rel='stylesheet', type='text/css')
-
   title="Chan the Bird Man | " + pageTitle
 
 mixin main-js
-  script(src='js/main.js')
+  script(type='text/javascript')
+    include main.js
