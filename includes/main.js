@@ -17,19 +17,18 @@ playButton.addEventListener('click', function() {
 
 function orientationChangeAction() {
   pauseVideo();
-  if (window.orientation === 0) {
+  if (window.orientation !== undefined && window.orientation === 0) {
     video.setAttribute('playsinline', 'true');
-    video.innerHTML = '<video playsinline><source src="./videos/phone-angles-music.m4v" type="video/mp4"></video>';
+    video.innerHTML = '<source src="./videos/phone-angles-music.m4v" type="video/mp4">';
   }
   else {
     video.removeAttribute('playsinline');
     video.innerHTML = '<source src="./videos/desktop-angles-music.mp4" type="video/mp4">';
   }
-  video = document.querySelector('video');
 }
 window.addEventListener('orientationchange', orientationChangeAction);
 // Initial execution
-if ("onorientationchange" in window) orientationChangeAction();
+orientationChangeAction();
 
 function playVideo(){
   window.scrollTo(0,0);
