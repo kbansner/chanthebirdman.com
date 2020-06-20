@@ -19,11 +19,11 @@ function orientationChangeAction() {
   pauseVideo();
   if (window.orientation !== undefined && window.orientation === 0) {
     video.setAttribute('playsinline', 'true');
-    video.innerHTML = '<source src="./videos/phone-angles-music.m4v" type="video/mp4">';
+    video.innerHTML = '<source src="//s3-us-west-1.amazonaws.com/videos.chanthebirdman.com/phone-angles-music.mp4" type="video/mp4">';
   }
   else {
     video.removeAttribute('playsinline');
-    video.innerHTML = '<source src="./videos/desktop-angles-music.mp4" type="video/mp4">';
+    video.innerHTML = '<source src="//s3-us-west-1.amazonaws.com/videos.chanthebirdman.com/desktop-angles-music.mp4" type="video/mp4">';
   }
 }
 window.addEventListener('orientationchange', orientationChangeAction);
